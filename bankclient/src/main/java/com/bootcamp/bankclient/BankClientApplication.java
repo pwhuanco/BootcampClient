@@ -14,7 +14,7 @@ public class BankClientApplication {
 
     public static void main(String[] args) {
         LOGGER.debug("--Iniciando BankClientApplication--");
-        
+
         SpringApplication.run(BankClientApplication.class, args);
     }
 
