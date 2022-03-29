@@ -36,8 +36,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    services:
-      myservice:
+    container:
         ports:
         - 8091:80
     steps:
