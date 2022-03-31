@@ -96,7 +96,7 @@ public class ClientServiceImpl implements ClientService {
                     });
 //                    Optional.ofNullable(null).ifPresentOrElse();
                     Optional.ofNullable((ArrayList<Account>) restTemplate.getForObject(
-                            urlApigateway + urlAccounts+"/"+clientId,
+                            urlApigateway + urlAccounts+clientId,
                             ArrayList.class)).ifPresentOrElse(accounts -> {
                                 summary.setAccount(accounts);
                     },() -> new ArrayList<>());

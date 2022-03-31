@@ -14,13 +14,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class BankClientApplication {
 
     @Bean
-    public WebClient webClient(WebClient.Builder builder) {
-        return builder
-                .baseUrl("http://localhost:8092/api/accounts/findByClientId")
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .build();
-    }
-    @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
