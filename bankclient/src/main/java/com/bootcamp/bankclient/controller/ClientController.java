@@ -1,11 +1,10 @@
 package com.bootcamp.bankclient.controller;
 
+import com.bootcamp.bankclient.model.dto.ClientSummaryDto;
 import com.bootcamp.bankclient.model.entities.Client;
 import com.bootcamp.bankclient.model.dto.ClientDto;
 import com.bootcamp.bankclient.service.ClientService;
 import com.bootcamp.bankclient.service.ClientTypeService;
-import com.bootcamp.bankclient.service.Impl.ClientServiceImpl;
-import com.bootcamp.bankclient.service.Impl.ClientTypeServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,6 +83,11 @@ public class ClientController {
     @DeleteMapping("/{id}")
     public Mono<Void> deleteClient(@PathVariable String id){
         return clientService.deleteClient(id);
+    }
+
+    @GetMapping("/summary/{clientId}")
+    public Mono<ClientSummaryDto> summary(@PathVariable String clientId){
+        return clientService.summary(clientId);
     }
 
 }

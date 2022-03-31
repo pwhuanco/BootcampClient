@@ -20,12 +20,9 @@ public class Client {
 	@Id
 	private String id;
 	private String name;
-
 	private String clientIdType;
-
 	@Indexed(unique = true)
 	private String clientIdNumber;
-
 	@Email
 	private String email;
 	private String phone;
